@@ -5,6 +5,9 @@ import '../Screen/ProviderLogin.dart';
 import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../Screen/ProviderDashboard.dart';
+import 'oauthpage.dart';
+
+
 class ProviderRegistration extends StatefulWidget {
   @override
   _ProviderRegistrationState createState() => _ProviderRegistrationState();
@@ -185,7 +188,30 @@ class _ProviderRegistrationState extends State<ProviderRegistration> {
                             _signUp(email.text, password.text, context);
                           },
                           child: "Sign-Up".text.white.light.xl.makeCentered().box.white.shadowOutline(outlineColor: Colors.grey).color(Color(0XFFFF0772)).roundedLg.make().w(150).h(40)),
-                      HeightBox(140),
+                      HeightBox(30),
+
+                      GestureDetector(
+
+
+
+                        onTap: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Oauth()));
+                        },
+                        child: RichText(text: TextSpan(
+                          text: 'New User?',
+                          style: TextStyle(fontSize: 15.0, color: Colors.black),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: ' Login with facebook or twitter',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: Color(0XFF4321F5)),
+                            ),
+                          ],
+                        )
+                        ).pLTRB(20, 0, 0, 15),
+                      )
 
                     ],
                   ),

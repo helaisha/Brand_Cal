@@ -480,6 +480,8 @@ class socialmedia extends StatelessWidget {
 
           Text("UID: ${_providerState.getUid}"),
           Text("Email : ${_providerState.getEmail}"),
+          Text("Token : ${_providerState.getToken}"),
+          Text("Secret : ${_providerState.getSecret}"),
 
         ],
       ),

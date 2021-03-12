@@ -2,6 +2,7 @@
 // import 'package:calendar_flutter_app/route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_authentication_tutorial/Screen/constants.dart';
+import 'package:firebase_authentication_tutorial/Screen/publishing.dart';
 import 'package:firebase_helpers/firebase_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,12 +54,147 @@ class _Event extends State<Event> {
     ProviderState _providerState = Provider.of<ProviderState>(context,listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase starter'),
+        // leadingWidth: screenSize.width,
+        leading: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/strawberries.jpg'),
+            radius: 20.0),
+        title: Text('BRAND',
+          style: TextStyle(
+              fontSize: 10.0),
+        ),
         actions: <Widget>[
-          // IconButton(
-          //   icon: Icon(Icons.person),
-          //   // onPressed: () => Navigator.pushNamed(),context, AppRoutes.profile),
-          // )
+          Container(
+
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                //      Text ('Publishing',
+                // style: TextStyle(
+                //   fontSize: 24.0,
+                //   fontStyle: FontStyle.italic,
+                //   fontWeight: FontWeight.bold)
+                //             ),
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          //maintainState: true,
+                            fullscreenDialog: false,
+                            builder: (context) => Publishing()),
+                      );
+                    },
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.publish,
+                          color: Colors.black,
+                          size: 10,
+                        ),
+                        Text('PUBLISHING',
+                            style: TextStyle(
+                                fontSize: 10.0,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(),
+          SizedBox(width:3),
+          Container(
+
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       //maintainState: true,
+                      //       fullscreenDialog: false,
+                      //       builder: (context) => Listening()),
+                      // );
+                    },
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.hearing,
+                          color: Colors.black,
+                          size: 10,
+                        ),
+                        Text('LISTENING',
+                            style: TextStyle(
+                                fontSize: 10.0,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(),
+          SizedBox(width:3),
+          Container(
+            height: 15,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         //maintainState: true,
+                      //         fullscreenDialog: false,
+                      //         builder: (context) => analytics()),
+                      //   );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.analytics,
+                          color: Colors.black,
+                          size: 10,
+                        ),
+                        Text('ANALYTICS',
+                            style: TextStyle(
+                                fontSize: 10.0,
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(),
+          SizedBox(width:3),
+          Container(
+
+              child: Center(
+                child:
+                Text('| ELISHA', style: TextStyle(fontSize: 10.0)),
+
+              )
+          ),
+          IconButton(
+              icon: Icon(Icons.person_outline_rounded), onPressed: () {}),
         ],
       ),
       body: SingleChildScrollView(
