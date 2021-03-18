@@ -109,6 +109,8 @@ class _OauthState extends State<Oauth> {
   @override
   Widget build(BuildContext context) {
     ProviderState _providerState = Provider.of<ProviderState>(context,listen: false);
+    final Uiid =_providerState.linkedin_uid;
+    final tokken =_providerState.linkedin_token;
     return Scaffold(
         body: SafeArea(
             child: Stack(
@@ -268,7 +270,8 @@ class _OauthState extends State<Oauth> {
                                             print('Access token ${linkedInUser.token.accessToken}');
 
                                             print('User id: ${linkedInUser.userId}');
-                                             // _providerState.getUid : linkedInUser.token.accessToken;
+                                            _providerState.linkedin_uid = linkedInUser.userId;
+                                            _providerState.linkedin_token = linkedInUser.token.accessToken ;
 
                                             user = UserObject(
                                               firstName: linkedInUser?.firstName?.localized?.label,

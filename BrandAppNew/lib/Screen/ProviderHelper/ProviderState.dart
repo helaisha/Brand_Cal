@@ -11,12 +11,16 @@ import 'package:http/http.dart' as http ;
 class ProviderState extends ChangeNotifier{
 
   String _uid;
+  String linkedin_uid;
+  String linkedin_token;
   String _email;
   String _token;
   String _name;
   String _secret;
 
 
+  String get getlinkedinuid =>linkedin_uid;
+  String get getlinkedin_token =>linkedin_token;
   String get getUid =>_uid;
   String get getEmail => _email;
   String get getToken => _token;

@@ -482,6 +482,8 @@ class socialmedia extends StatelessWidget {
           Text("Email : ${_providerState.getEmail}"),
           Text("Token : ${_providerState.getToken}"),
           Text("Secret : ${_providerState.getSecret}"),
+          Text("linkedin_uid : ${_providerState.linkedin_uid}"),
+          Text("linkedin_token : ${_providerState.linkedin_token}"),
 
         ],
       ),
